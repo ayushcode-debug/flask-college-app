@@ -45,4 +45,19 @@ flask-college-app/
 │ ├── enroll.html
 │ └── payments.html
 
+## 📸 Screenshots
+
+### Home Page
+![Home Page](screenshots/home.png)
+
+### Enroll Student
+![Enroll Student](screenshots/enroll.png)
+
+### Students Page
+![Students](screenshots/students.png)
+
+### Courses Page
+![Courses](screenshots/courses.png)
+
+
 
