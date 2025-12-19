@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Payments</h3>
+
+<!-- Payment form -->
+<form method="post" class="row g-2 mb-4">
+  <div class="col-md-4">
+    <select name="enroll_id" class="form-select" required>
+      <option value="">Select Enrollment</option>
+      {% for p in payments %}
+      <option value="{{ p.enroll_id }}">{{ p.enroll_id }} - {{ p.first_name }} {{ p.last_name }} - {{ p.course }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="col-md-2"><input name="amount" class="form-control" placeholder="Amount" required></div>
+  <div class="col-md-2"><input name="paid_on" type="date" class="form-control"></div>
+  <div class="col-md-2"><input name="method" class="form-control" placeholder="Method"></div>
+  <div class="col-md-2"><input name="reference" class="form-control" placeholder="Reference"></div>
+  <div class="col-12"><button class="btn btn-primary mt-2">Record Payment</button></div>
+</form>
+
+<!-- Payment list -->
+<table class="table table-striped">
+<thead><tr><th>ID</th><th>Student</th><th>Course</th><th>Amount</th><th>Paid On</th></tr></thead>
+<tbody>
+  {% for p in payments %}
+  <tr>
+    <td>{{ p.payment_id }}</td>
+    <td>{{ p.first_name }} {{ p.last_name }}</td>
+    <td>{{ p.course }}</td>
+    <td>{{ p.amount }}</td>
+    <td>{{ p.paid_on }}</td>
+  </tr>
+  {% endfor %}
+</tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-md-4">
+    <div class="card text-white bg-success mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Students</h5>
+        <p class="card-text fs-3">{{ students }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card text-white bg-info mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Courses</h5>
+        <p class="card-text fs-3">{{ courses }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card text-white bg-warning mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Enrollments</h5>
+        <p class="card-text fs-3">{{ enrollments }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Enroll Student</h3>
+
+<form method="post" class="row g-2 mb-4">
+  <div class="col-md-4">
+    <select name="student_id" class="form-select" required>
+      <option value="">Select student</option>
+      {% for s in students %}<option value="{{ s.student_id }}">{{ s.name }}</option>{% endfor %}
+    </select>
+  </div>
+  <div class="col-md-4">
+    <select name="course_id" class="form-select" required>
+      <option value="">Select course</option>
+      {% for c in courses %}<option value="{{ c.course_id }}">{{ c.name }}</option>{% endfor %}
+    </select>
+  </div>
+  <div class="col-md-4">
+    <select name="teacher_id" class="form-select">
+      <option value="">Select teacher (optional)</option>
+      {% for t in teachers %}<option value="{{ t.teacher_id }}">{{ t.name }}</option>{% endfor %}
+    </select>
+  </div>
+  <div class="col-12"><button class="btn btn-primary mt-2">Enroll</button></div>
+</form>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Students</h3>
+
+<!-- Add Student Form -->
+<form method="post" action="{{ url_for('add_student') }}" class="row g-2 mb-4">
+  <div class="col-md-2"><input name="roll_number" class="form-control" placeholder="Roll No" required></div>
+  <div class="col-md-3"><input name="first_name" class="form-control" placeholder="First name" required></div>
+  <div class="col-md-3"><input name="last_name" class="form-control" placeholder="Last name"></div>
+  <div class="col-md-2"><input name="email" class="form-control" placeholder="Email"></div>
+  <div class="col-md-2"><input name="city" class="form-control" placeholder="City"></div>
+  <div class="col-12"><button class="btn btn-primary mt-2">Add Student</button></div>
+</form>
+
+<table class="table table-striped">
+<thead><tr><th>ID</th><th>Name</th><th>Roll</th><th>Email</th><th>City</th></tr></thead>
+<tbody>
+  {% for s in students %}
+  <tr>
+    <td>{{ s.student_id }}</td>
+    <td>{{ s.first_name }} {{ s.last_name }}</td>
+    <td>{{ s.roll_number }}</td>
+    <td>{{ s.email }}</td>
+    <td>{{ s.city }}</td>
+  </tr>
+  {% endfor %}
+</tbody>
+</table>
+{% endblock %}

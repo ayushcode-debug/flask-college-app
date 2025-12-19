@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Courses</h3>
+
+<form method="post" action="{{ url_for('add_course') }}" class="row g-2 mb-4">
+  <div class="col-md-3"><input name="course_code" class="form-control" placeholder="Course Code (e.g. DS101)" required></div>
+  <div class="col-md-4"><input name="name" class="form-control" placeholder="Course Name" required></div>
+  <div class="col-md-2"><input name="duration_months" class="form-control" placeholder="Duration Months"></div>
+  <div class="col-md-2"><input name="fees" class="form-control" placeholder="Fees"></div>
+  <div class="col-12"><textarea name="description" class="form-control mt-2" placeholder="Description"></textarea></div>
+  <div class="col-12"><button class="btn btn-primary mt-2">Add Course</button></div>
+</form>
+
+<table class="table table-striped">
+<thead><tr><th>ID</th><th>Code</th><th>Name</th><th>Fees</th></tr></thead>
+<tbody>
+  {% for c in courses %}
+  <tr>
+    <td>{{ c.course_id }}</td>
+    <td>{{ c.course_code }}</td>
+    <td>{{ c.name }}</td>
+    <td>{{ c.fees }}</td>
+  </tr>
+  {% endfor %}
+</tbody>
+</table>
+{% endblock %}
