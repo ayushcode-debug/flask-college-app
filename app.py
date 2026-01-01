@@ -13,7 +13,7 @@ app.secret_key = os.getenv("FLASK_SECRET", "dev_secret_key")
 DB_CONFIG = {
     "host": os.getenv("DB_HOST", "localhost"),
     "user": os.getenv("DB_USER", "root"),
-    "password": os.getenv("DB_PASS", "Ab#230938000194"),
+    "password": os.getenv("DB_PASS"),
     "database": os.getenv("DB_NAME", "CollegeDB"),
     "raise_on_warnings": True,
     "autocommit": True,
@@ -167,3 +167,4 @@ def payments():
 # ---------------- Run ----------------
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.getenv("PORT", 5000)))
+
