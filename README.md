@@ -51,13 +51,14 @@ flask-college-app/
 ![Home Page](screenshots/home.png)
 
 ### Enroll Student
-![Enroll Student](screenshots/enroll.png)
+![Enroll](screenshots/enroll.png)
 
 ### Students Page
 ![Students](screenshots/students.png)
 
 ### Courses Page
 ![Courses](screenshots/courses.png)
+
 
 
 
